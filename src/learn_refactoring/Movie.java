@@ -43,24 +43,6 @@ public class Movie {
     }
 
     public double getCharge(int daysRentened) {
-        double amount = 0;
-
-        switch(getPriceCode()) {
-            case REGULAR:
-                amount = +2;
-                if(daysRentened > 2)  amount += (daysRentened - 2) * 1.5;
-                break;
-
-            case NEW_RELEASE:
-                amount += daysRentened * 3;
-                break;
-
-            case CHILDRENS:
-                amount += 1.5;
-                if(daysRentened > 3)  amount += (daysRentened -3) * 1.5;
-                break;
-        }
-
-        return amount;
+        return _price.getCharge(daysRentened);
     }
 }

@@ -7,4 +7,9 @@ public class NewReleasePrice extends Price {
         return Movie.NEW_RELEASE;
     }
 
+    @Override
+    double getCharge(int daysRentened) {
+        return daysRentened * 3;
+    }
+
 }
